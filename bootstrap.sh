@@ -5,7 +5,8 @@ if ! [[ -e $key_location.pub ]]; then
 fi
 
 key_data=$(cat $key_location.pub)
-json_payload="{\"title\": \"butt-house\", \"key\": \"$key_data\"}"
+key_name=$HOSTNAME:$RANDOM
+json_payload="{\"title\": \"$key_name\", \"key\": \"$key_data\"}"
 read -s -p "Github password? " github_password
 github_username=sethaurus
 github_url="https://$github_username:$github_password@api.github.com/user/keys"
