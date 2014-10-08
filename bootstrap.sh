@@ -1,5 +1,4 @@
-fn=/tmp/$RANDOM
-touch $fn
-chmod +x $fn
+fn=$(mktemp)
 curl -L https://raw.githubusercontent.com/sethaurus/tools-bootstrap/master/interactive.sh > $fn
-bash $fn
+chmod +x $fn
+sh $fn
